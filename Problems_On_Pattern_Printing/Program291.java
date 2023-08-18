@@ -1,0 +1,63 @@
+import java.util.*;
+
+class Pattern
+{
+    public int iRow;
+    public int iCol;
+
+    public Pattern(int r, int c)
+    {
+        iRow = r;
+        iCol = c;
+    }
+
+    public void DisplayPattern()
+    {        
+        int i = 0;
+        int j = 0;
+        int iCnt = 1;
+
+        if(iRow < 0)
+        {
+            iRow = -iRow;
+        }
+
+        if(iCol < 0)
+        {
+            iCol = -iCol;
+        }
+
+        for(i = 1; i<=iRow; i++)
+        {
+            for(j = 1; j<=iCol; j++,iCnt++)
+            {
+                if(iCnt == 10)
+                {
+                    iCnt = 1;
+                }
+                System.out.print(iCnt+"\t");
+           
+            
+            }
+            System.out.println();
+        }
+    }
+}
+
+class Program291
+{
+    public static void main(String ar[])
+    {
+        int iNo1 = 0;
+        int iNo2 = 0;
+        Scanner sobj = new Scanner(System.in);
+
+        System.out.println("Enter the row size:");
+        iNo1 = sobj.nextInt();
+        System.out.println("Enter the column size:");
+        iNo2 = sobj.nextInt();
+
+        Pattern pobj = new Pattern(iNo1,iNo2);
+        pobj.DisplayPattern();
+    }
+}
